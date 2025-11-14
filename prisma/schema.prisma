@@ -1,0 +1,89 @@
+//prisma
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
+}
+
+// Auth tables for better-auth
+model User {
+  id            String   @id @default(cuid())
+  name          String
+  email         String   @unique
+  emailVerified Boolean  @default(false)
+  image         String?
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+
+  // Relations
+  sessions    Session[]
+  accounts    Account[]
+  verifications Verification[]
+
+  // Indexes for performance
+  @@index([id], map: "idx_user_id")
+  @@index([email], map: "idx_user_email")
+  @@map("user")
+}
+
+model Session {
+  id        String   @id @default(cuid())
+  token     String   @unique
+  ipAddress String?
+  userAgent String?
+  expiresAt DateTime
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  // Relations
+  userId String
+  user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  // Indexes for performance
+  @@index([token], map: "idx_session_token")
+  @@index([token, userId, expiresAt], map: "idx_session_validation")
+  @@index([expiresAt], map: "idx_session_expires_at")
+  @@map("session")
+}
+
+model Account {
+  id                       String    @id @default(cuid())
+  accountId                String
+  providerId               String
+  accessToken              String?
+  refreshToken             String?
+  idToken                  String?
+  accessTokenExpiresAt     DateTime?
+  refreshTokenExpiresAt    DateTime?
+  scope                    String?
+  password                 String?
+  createdAt                DateTime  @default(now())
+  updatedAt                DateTime  @updatedAt
+
+  // Relations
+  userId String
+  user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([providerId, accountId])
+  @@map("account")
+}
+
+model Verification {
+  id         String   @id @default(cuid())
+  identifier String
+  value      String
+  expiresAt  DateTime
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+
+  // Relations
+  userId String?
+  user   User?  @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@map("verification")
+}
