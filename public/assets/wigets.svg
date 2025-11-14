@@ -1,0 +1,20 @@
+<svg viewBox="0 0 36 36" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="36.000000" height="36.000000" fill="none">
+	<defs>
+		<g id="pixso_custom_effect_0">
+			<effect x="0.000000" y="1.000000" visibility="visible" fill="rgb(31,41,55)" fill-opacity="0.400000006" effectType="innerShadow" stdDeviation="0.5" radius="0" />
+		</g>
+		<filter id="filter_0" width="30.250000" height="27.265869" x="2.875000" y="4.375732" filterUnits="userSpaceOnUse" customEffect="url(#pixso_custom_effect_0)" color-interpolation-filters="sRGB">
+			<feFlood flood-opacity="0" result="BackgroundImageFix" />
+			<feBlend result="shape" in="SourceGraphic" in2="BackgroundImageFix" mode="normal" />
+			<feOffset dx="0.000000" dy="1.000000" in="SourceAlpha" />
+			<feGaussianBlur stdDeviation="0.166666672" />
+			<feComposite k2="-1" k3="1" in2="SourceAlpha" operator="arithmetic" />
+			<feColorMatrix type="matrix" values="0 0 0 0 0.121569 0 0 0 0 0.160784 0 0 0 0 0.215686 0 0 0 0.4 0 " />
+			<feBlend result="effect_innerShadow_1" in2="shape" mode="normal" />
+		</filter>
+	</defs>
+	<rect id="Frame" width="36.000000" height="36.000000" x="0.000000" y="0.000000" fill="rgb(255,255,255)" fill-opacity="0" />
+	<g filter="url(#filter_0)">
+		<path id="Vector" d="M11.6959 18L4.96088 21.351C3.84637 21.906 3.84637 23.5065 4.96088 24.0615L17.3359 30.2189C17.7559 30.4274 18.2464 30.4274 18.6649 30.2189L31.0399 24.0615C32.1544 23.5065 32.1544 21.9044 31.0399 21.351L24.3049 18M4.96088 14.6489C3.84637 14.0939 3.84637 12.4935 4.96088 11.9384L17.3359 5.78095C17.5425 5.67885 17.7699 5.62573 18.0004 5.62573C18.2309 5.62573 18.4582 5.67885 18.6649 5.78095L31.0399 11.9384C32.1544 12.4935 32.1544 14.0939 31.0399 14.6489L24.3049 18L18.6649 20.8064C18.2464 21.0149 17.7559 21.0149 17.3359 20.8064L11.6959 18L4.96088 14.6489Z" fill-rule="nonzero" stroke="rgb(156,163,175)" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" />
+	</g>
+</svg>
