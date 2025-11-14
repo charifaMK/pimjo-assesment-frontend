@@ -6,7 +6,7 @@ export const dynamic = 'force-dynamic';
 
 export async function POST(request: NextRequest) {
   try {
-    // get token from Authorization header
+    // extract authentication token from request header
     const authHeader = request.headers.get("authorization");
     if (!authHeader || !authHeader.startsWith("Bearer ")) {
       return NextResponse.json(
@@ -17,7 +17,7 @@ export async function POST(request: NextRequest) {
 
     const token = authHeader.substring(7);
 
-    // quick JWT verification only - skip full session validation for logout
+    // perform basic token validation for logout operation
     const payload = verifyToken(token);
     if (!payload) {
       return NextResponse.json(
@@ -32,11 +32,11 @@ export async function POST(request: NextRequest) {
         userId: payload.userId
       }
     }).catch(error => {
-      // log error but don't fail the logout
+      // log cleanup error without interrupting logout flow
       console.warn("Session cleanup warning:", error);
     });
 
-    // return immediately without waiting for database cleanup
+    // respond immediately while cleanup continues in background
     return NextResponse.json({ success: true, message: "Signed out successfully" });
   } catch (error) {
     console.error("Signout error:", error);

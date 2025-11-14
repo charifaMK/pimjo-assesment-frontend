@@ -40,7 +40,7 @@ export function useAuth(): UseAuthReturn {
       });
 
       if (!response.ok) {
-        // Token is invalid or expired
+        // token is invalid or has expired
         localStorage.removeItem("auth_token");
         setUser(null);
         setIsLoading(false);

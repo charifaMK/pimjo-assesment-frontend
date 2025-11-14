@@ -6,7 +6,7 @@ export const dynamic = 'force-dynamic';
 
 export async function GET(request: NextRequest) {
   try {
-    // get the authentication token from the request header
+    // extract authentication token from request authorization header
     const authHeader = request.headers.get("authorization");
     if (!authHeader || !authHeader.startsWith("Bearer ")) {
       return NextResponse.json({ user: null }, { status: 401 });
@@ -14,13 +14,13 @@ export async function GET(request: NextRequest) {
 
     const token = authHeader.substring(7);
 
-    // verify this token is legit and hasn't been tampered with
+    // validate token authenticity and integrity
     const payload = verifyToken(token);
     if (!payload) {
       return NextResponse.json({ user: null }, { status: 401 });
     }
 
-    // find the user's session and grab their info from our database
+    // retrieve user session and associated data from database
     const sessionWithUser = await prisma.session.findFirst({
       where: {
         token: token,

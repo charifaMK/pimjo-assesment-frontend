@@ -9,7 +9,7 @@ export async function POST(request: NextRequest) {
     const body = await request.json();
     const { email, password, rememberMe } = body;
 
-    // validate input
+    // validate required input fields
     if (!email || !password) {
       return NextResponse.json(
         { error: "Missing email or password" },
@@ -17,7 +17,7 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // find user by email
+    // locate user account by email address
     const foundUser = await prisma.user.findUnique({
       where: { email }
     });
@@ -29,7 +29,7 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // find account with password
+    // retrieve user account with password credentials
     const account = await prisma.account.findFirst({
       where: {
         userId: foundUser.id,
@@ -45,7 +45,7 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // verify password
+    // authenticate user password against stored hash
     const isValidPassword = await comparePassword(password, account.password);
     if (!isValidPassword) {
       return NextResponse.json(
@@ -54,14 +54,14 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // generate JWT token
+    // create authentication token for user session
     const token = generateToken({
       userId: foundUser.id,
       email: foundUser.email,
       name: foundUser.name,
     });
 
-    // create session in database
+    // establish user session in database with expiration
     const now = new Date();
     const expiresAt = new Date(now.getTime() + (rememberMe ? 30 : 7) * 24 * 60 * 60 * 1000);
 

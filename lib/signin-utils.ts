@@ -1,10 +1,10 @@
-// validate email format
+// validates email format using regex pattern
 export const validateEmail = (email: string): boolean => {
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   return emailRegex.test(email);
 };
 
-// validate password strength
+// validates password strength with multiple criteria
 export const validatePassword = (password: string): { isValid: boolean; message?: string } => {
   if (password.length < 8) {
     return { isValid: false, message: "Password must be at least 8 characters long" };
@@ -25,28 +25,28 @@ export const validatePassword = (password: string): { isValid: boolean; message?
   return { isValid: true };
 };
 
-// store auth token in localstorage
+// stores authentication token in browser local storage
 export const storeAuthToken = (token: string): void => {
   localStorage.setItem("auth_token", token);
 };
 
-// get auth token from localstorage
+// retrieves authentication token from browser local storage
 export const getAuthToken = (): string | null => {
   return localStorage.getItem("auth_token");
 };
 
-// remove auth token from localstorage
+// removes authentication token from browser local storage
 export const removeAuthToken = (): void => {
   localStorage.removeItem("auth_token");
 };
 
-// check if user is authenticated
+// checks if user has valid authentication token
 export const isUserAuthenticated = (): boolean => {
   const token = getAuthToken();
   return !!token;
 };
 
-// format error message for signin
+// formats error messages for consistent user display
 export const formatSigninError = (error: any): string => {
   if (typeof error === "string") {
     return error;
@@ -59,7 +59,7 @@ export const formatSigninError = (error: any): string => {
   return "An unexpected error occurred. Please try again.";
 };
 
-// prepare signin request body
+// prepares and sanitizes signin request data
 export const prepareSigninBody = (email: string, password: string, rememberMe: boolean) => {
   return {
     email: email.trim().toLowerCase(),

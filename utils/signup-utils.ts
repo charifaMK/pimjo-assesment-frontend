@@ -1,4 +1,4 @@
-// validation utilities for signup form
+// validates password strength and length requirements
 export const validatePassword = (password: string): { isValid: boolean; message: string | null } => {
   if (password.length < 8) {
     return { isValid: false, message: "password must be at least 8 characters long" };
@@ -6,7 +6,7 @@ export const validatePassword = (password: string): { isValid: boolean; message:
   return { isValid: true, message: null };
 };
 
-// validate email format
+// validates email format using regex pattern
 export const validateEmail = (email: string): { isValid: boolean; message: string | null } => {
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   if (!emailRegex.test(email)) {
@@ -16,7 +16,7 @@ export const validateEmail = (email: string): { isValid: boolean; message: strin
   return { isValid: true, message: null };
 };
 
-// validate full name
+// validates full name length and format
 export const validateFullName = (fullName: string): { isValid: boolean; message: string | null } => {
   if (fullName.trim().length < 2) {
     return { isValid: false, message: "full name must be at least 2 characters long" };
@@ -25,7 +25,7 @@ export const validateFullName = (fullName: string): { isValid: boolean; message:
   return { isValid: true, message: null };
 };
 
-// validate password match
+// validates that password and confirm password fields match
 export const validatePasswordMatch = (password: string, confirmPassword: string): { isValid: boolean; message: string | null } => {
   if (password !== confirmPassword) {
     return { isValid: false, message: "passwords do not match" };
@@ -34,7 +34,7 @@ export const validatePasswordMatch = (password: string, confirmPassword: string)
   return { isValid: true, message: null };
 };
 
-// validate entire form
+// performs comprehensive validation of the entire signup form
 export const validateSignupForm = (formData: {
   fullName: string;
   email: string;
@@ -43,25 +43,25 @@ export const validateSignupForm = (formData: {
 }): { isValid: boolean; errors: Record<string, string> } => {
   const errors: Record<string, string> = {};
   
-  // validate full name
+  // validate full name field
   const nameValidation = validateFullName(formData.fullName);
   if (!nameValidation.isValid && nameValidation.message) {
     errors.fullName = nameValidation.message;
   }
   
-  // validate email
+  // validate email field
   const emailValidation = validateEmail(formData.email);
   if (!emailValidation.isValid && emailValidation.message) {
     errors.email = emailValidation.message;
   }
   
-  // validate password
+  // validate password field
   const passwordValidation = validatePassword(formData.password);
   if (!passwordValidation.isValid && passwordValidation.message) {
     errors.password = passwordValidation.message;
   }
   
-  // validate password match
+  // validate password confirmation field
   const passwordMatchValidation = validatePasswordMatch(formData.password, formData.confirmPassword);
   if (!passwordMatchValidation.isValid && passwordMatchValidation.message) {
     errors.confirmPassword = passwordMatchValidation.message;
@@ -119,7 +119,7 @@ export const signupUser = async (userData: {
   }
 };
 
-// format error messages for display
+// converts error codes to user-friendly error messages
 export const formatErrorMessage = (error: string): string => {
   const errorMap: Record<string, string> = {
     "USER_ALREADY_EXISTS": "email already registered. please sign in instead.",

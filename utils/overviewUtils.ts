@@ -1,11 +1,11 @@
-// utility function to get status color based on status
+// returns appropriate color class based on status value
 export const getStatusColor = (status: string): string => {
   if (status === "Complete") return "text-green-600";
   if (status === "Pending") return "text-orange-600";
   return "text-gray-600";
 };
 
-// utility function to generate page numbers for pagination
+// generates pagination numbers with ellipsis for large page ranges
 export const getPageNumbers = (currentPage: number, totalPages: number): (number | string)[] => {
   const pages: (number | string)[] = [];
   
@@ -28,7 +28,7 @@ export const getPageNumbers = (currentPage: number, totalPages: number): (number
   return pages;
 };
 
-// static stats data
+// dashboard statistics data for overview display
 export const statsData = [
   {
     title: "Unique Visitors",

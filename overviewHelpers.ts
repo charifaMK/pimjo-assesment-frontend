@@ -1,24 +1,24 @@
-// get paginated users from the full list
+// extracts a subset of users for pagination display
 export const getPaginatedUsers = (users: any[], startIndex: number, endIndex: number): any[] => {
   return users.slice(startIndex, endIndex);
 };
 
-// log paginated users for debugging
+// logs paginated user data for debugging purposes
 export const logPaginatedUsers = (users: any[]): void => {
   console.log('paginated users', users);
 };
 
-// check if loading state should be shown
+// determines if loading indicator should be displayed
 export const shouldShowLoading = (isAuthLoading: boolean, isLoadingUsers: boolean): boolean => {
   return isAuthLoading || isLoadingUsers;
 };
 
-// check if no users state should be shown
+// checks if empty state should be shown when no users exist
 export const shouldShowNoUsers = (users: any[], isLoadingUsers: boolean): boolean => {
   return !isLoadingUsers && users.length === 0;
 };
 
-// get display text for pagination info
+// formats pagination display text with current range and total count
 export const getPaginationText = (startIndex: number, endIndex: number, totalLength: number): string => {
   return `showing ${startIndex + 1} to ${Math.min(endIndex, totalLength)} of ${totalLength}`;
 };

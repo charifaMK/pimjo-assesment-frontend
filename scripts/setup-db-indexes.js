@@ -11,11 +11,11 @@ async function setupIndexes() {
       authToken: process.env.TURSO_AUTH_TOKEN,
     });
 
-    // Read and execute the migration file
+    // read and execute the migration file
     const migrationPath = path.join(__dirname, '../db/migrations/add_indexes.sql');
     const migrationSQL = fs.readFileSync(migrationPath, 'utf8');
 
-    // Execute each statement separately
+    // execute each sql statement individually
     const statements = migrationSQL
       .split(';')
       .map(stmt => stmt.trim())

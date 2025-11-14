@@ -25,7 +25,7 @@ export function useAuthCallback(options: AuthCallbackOptions = {}): AuthCallback
 
   const handleAuthCallback = useCallback(async () => {
     try {
-      // get the authorization code and error from URL parameters
+      // extract authorization code and error from url parameters
       const code = searchParams.get('code')
       const error = searchParams.get('error')
       const errorDescription = searchParams.get('error_description')
@@ -39,7 +39,7 @@ export function useAuthCallback(options: AuthCallbackOptions = {}): AuthCallback
       }
 
       if (code) {
-        // exchange the authorization code for a session
+        // convert authorization code to user session
         const { exchangeCodeForSession } = await import('@/lib/auth-utils')
         const { data, error: sessionError } = await exchangeCodeForSession(code)
         
@@ -63,7 +63,7 @@ export function useAuthCallback(options: AuthCallbackOptions = {}): AuthCallback
         }
       }
 
-      // fallback: Check for existing session
+      // fallback verification for existing active session
       const { getCurrentSession } = await import('@/lib/auth-utils')
       const { session, error: sessionCheckError } = await getCurrentSession()
       

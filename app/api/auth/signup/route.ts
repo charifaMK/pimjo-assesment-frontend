@@ -9,7 +9,7 @@ export async function POST(request: NextRequest) {
     const body = await request.json();
     const { email, password, name } = body;
 
-    //  validate input
+    // validate required input fields
     if (!email || !password || !name) {
       return NextResponse.json(
         { error: "Missing required fields" },
@@ -17,7 +17,7 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    //  validate email format
+    // validate email address format
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(email)) {
       return NextResponse.json(
@@ -26,7 +26,7 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    //  validate password length
+    // validate minimum password length requirement
     if (password.length < 8) {
       return NextResponse.json(
         { error: "Password must be at least 8 characters long" },
@@ -34,7 +34,7 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // check if user already exists
+    // verify email uniqueness in database
     const existingUser = await prisma.user.findUnique({
       where: { email }
     });
@@ -48,7 +48,7 @@ export async function POST(request: NextRequest) {
 
     const hashedPassword = await hashPassword(password);
 
-    // create user
+    // create new user record in database
     const userId = generateId();
     const now = new Date();
 
@@ -64,7 +64,7 @@ export async function POST(request: NextRequest) {
       }
     });
 
-    // create account with password
+    // establish user account with password credentials
     await prisma.account.create({
       data: {
         id: generateId(),
