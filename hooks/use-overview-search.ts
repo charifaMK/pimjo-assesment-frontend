@@ -3,7 +3,7 @@
 import { useState, useMemo } from "react";
 import { useUsers } from "@/hooks/use-users";
 
-// custom hook for search and filtering functionality
+// custom hook for search and filter operations
 export const useOverviewSearch = () => {
   const { users } = useUsers();
   const [searchQuery, setSearchQuery] = useState("");

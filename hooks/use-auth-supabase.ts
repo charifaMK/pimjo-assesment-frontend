@@ -29,12 +29,11 @@ export function useAuthSupabase() {
   useEffect(() => {
     const initAuth = async () => {
       try {
-        // check for existing JWT token first
+        // check for existing jwt token first
         const jwtToken = localStorage.getItem('auth_token')
         
         if (jwtToken) {
-          // user is authenticated with existing JWT system
-          // you could decode JWT to get user info here if needed
+          // user authenticated with existing jwt system
           setAuthState({
             user: null,
             loading: false,
@@ -43,7 +42,7 @@ export function useAuthSupabase() {
           return
         }
 
-        // check Supabase session
+        // retrieve supabase session
         const supabase = getSupabaseClient()
         const { data: { session }, error } = await supabase.auth.getSession()
         
@@ -77,7 +76,7 @@ export function useAuthSupabase() {
 
     initAuth()
 
-    // listen for auth changes
+    // monitor authentication state changes
     const supabase = getSupabaseClient()
     const { data: { subscription } } = supabase.auth.onAuthStateChange(
       async (event, session) => {
@@ -106,10 +105,10 @@ export function useAuthSupabase() {
   }, [])
 
   const handleSignOut = async () => {
-    // get token before clearing localStorage for server cleanup
+    // capture token before clearing localstorage for server cleanup
     const token = localStorage.getItem('auth_token')
 
-    // immediate UI update - clear auth state first for instant feedback
+    // immediate ui update - clear auth state first for instant feedback
     setAuthState({
       user: null,
       loading: false,
@@ -119,7 +118,7 @@ export function useAuthSupabase() {
     // clear token immediately
     localStorage.removeItem('auth_token')
 
-    // perform background cleanup without blocking UI
+    // perform background cleanup without blocking ui
     const cleanup = async () => {
       try {
         if (authState.isSupabaseAuth) {

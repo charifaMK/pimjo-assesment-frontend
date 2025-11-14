@@ -5,7 +5,7 @@ import { useUsers } from "@/hooks/use-users";
 import { useDeleteConfirmation } from "@/hooks/use-delete-confirmation";
 import { usePagination } from "@/hooks/use-pagination";
 
-// custom hook for user actions like delete and pagination management
+// custom hook for managing user actions and pagination controls
 export const useOverviewActions = (totalUsers: number) => {
   const { deleteUser } = useUsers();
   const pagination = usePagination(totalUsers, 5);
@@ -22,7 +22,7 @@ export const useOverviewActions = (totalUsers: number) => {
       setDeletingState(true);
       await deleteUser(deleteConfirmation.userId);
       
-      // adjust pagination if needed after deletion
+      // adjust pagination after user deletion if necessary
       pagination.adjustPageAfterDeletion(totalUsers - 1);
     } catch (error) {
       console.error("error deleting user:", error);

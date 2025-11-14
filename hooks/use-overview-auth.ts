@@ -9,7 +9,7 @@ export const useOverviewAuth = (): { user: any; isAuthLoading: boolean; shouldRe
   const router = useRouter();
   const { user, loading: isAuthLoading } = useAuthSupabase();
 
-  // protect the route
+  // protect route from unauthorized access
   useEffect(() => {
     if (!isAuthLoading && !user) {
       router.push("/signin");

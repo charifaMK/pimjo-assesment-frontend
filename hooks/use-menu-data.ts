@@ -37,12 +37,12 @@ export function useMenuData() {
   })
 
   useEffect(() => {
-    // if we already have cached data, don't fetch again
+    // skip fetch if cached data already exists
     if (menuCache) {
       return
     }
 
-    // if a fetch is already in progress, use the existing promise
+    // use existing promise if fetch is already in progress
     if (cachePromise) {
       cachePromise.then((result) => {
         setMenuState(result)
@@ -50,7 +50,7 @@ export function useMenuData() {
       return
     }
 
-    // create the fetch promise
+    // create fetch promise
     cachePromise = (async () => {
       try {
         const response = await fetch("https://69102d7545e65ab24ac5d435.mockapi.io/mega-menu")
@@ -65,7 +65,7 @@ export function useMenuData() {
           error: null
         }
 
-        // cache the result globally
+        // store result in global cache
         menuCache = result
         
         return result
@@ -77,14 +77,14 @@ export function useMenuData() {
           error: errorMessage
         }
         
-        // cache the error state to prevent repeated failed requests
+        // cache error state to prevent repeated failed requests
         menuCache = result
         
         return result
       }
     })()
 
-    // update state when the promise resolves
+    // update state when promise resolves
     cachePromise.then((result) => {
       setMenuState(result)
     })
@@ -93,7 +93,7 @@ export function useMenuData() {
   return menuState
 }
 
-// fnction to manually clear cache if needed
+// function to manually clear cache when needed
 export function clearMenuCache() {
   menuCache = null
   cachePromise = null
